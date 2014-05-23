@@ -121,6 +121,7 @@ static NSInteger badgeTag = 142014;
         LYSegmentedSliderControlBadgeView *badgeView = (LYSegmentedSliderControlBadgeView *)[button viewWithTag:badgeTag];
         if (badgeView == nil) {
             badgeView = [[LYSegmentedSliderControlBadgeView alloc] initWithFrame:CGRectMake(0, 0, 18, 18)];
+            badgeView.tag = badgeTag;
             [button addSubview:badgeView];
         }
         
