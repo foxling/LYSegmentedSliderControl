@@ -112,6 +112,7 @@ static NSInteger badgeTag = 142014;
     if (title != nil && index < self.items.count) {
         self.items[index] = title;
         [[self buttonAtIndex:index] setTitle:title forState:UIControlStateNormal];
+        [[self buttonAtIndex:index] setTitle:title forState:UIControlStateSelected];
     }
 }
 
