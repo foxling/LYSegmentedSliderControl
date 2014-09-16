@@ -18,4 +18,6 @@
 - (void)setBadgeText:(NSString *)text forSegmentAtIndex:(NSUInteger)index;
 - (NSString *)badgeTextForSegmentAtIndex:(NSUInteger)index;
 
+- (void)setBackgroundImage:(UIImage *)backgroundImage selectedImage:(UIImage *)selectedImage;
+
 @end

@@ -20,8 +20,8 @@ static NSInteger badgeTag = 142014;
 }
 
 @property (strong, nonatomic) NSMutableArray *items;
-@property (strong, nonatomic) UIView *backgroundView;
-@property (strong, nonatomic) UIView *selectedView;
+@property (strong, nonatomic) UIImageView *backgroundView;
+@property (strong, nonatomic) UIImageView *selectedView;
 
 @end
 
@@ -50,6 +50,16 @@ static NSInteger badgeTag = 142014;
     }
     return self;
 }
+
+- (void)setBackgroundImage:(UIImage *)backgroundImage selectedImage:(UIImage *)selectedImage {
+    if (backgroundImage) {
+        self.backgroundView.image = backgroundImage;
+    }
+    if (selectedImage) {
+        self.selectedView.image = selectedImage;
+    }
+}
+
 
 - (void)createButtons {
     UIFont *font = [UIFont systemFontOfSize:14];
