@@ -104,7 +104,9 @@ static NSInteger badgeTag = 142014;
 - (void)setSelectedSegmentIndex:(NSInteger)selectedSegmentIndex {
     if (selectedSegmentIndex < _buttons.count) {
         _selectedSegmentIndex = selectedSegmentIndex;
-        [_buttons makeObjectsPerformSelector:@selector(setSelected:) withObject:@(NO)];
+        for (UIButton *b in _buttons) {
+            b.selected = NO;
+        }
         [self buttonAtIndex:selectedSegmentIndex].selected = YES;
     }
 }
