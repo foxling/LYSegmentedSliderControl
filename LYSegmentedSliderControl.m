@@ -88,14 +88,6 @@ static NSInteger badgeTag = 142014;
 
 - (void)didClickButton:(UIButton *)button {
     if (self.selectedSegmentIndex != button.tag) {
-        [UIView animateWithDuration:0.3
-                              delay:0
-                            options:UIViewAnimationOptionCurveEaseOut
-                         animations:^{
-                             self.selectedView.center = button.center;
-                         }
-                         completion:nil];
-        
         [self setSelectedSegmentIndex:button.tag];
         [self sendActionsForControlEvents:UIControlEventValueChanged];
     }
@@ -107,7 +99,15 @@ static NSInteger badgeTag = 142014;
         for (UIButton *b in _buttons) {
             b.selected = NO;
         }
-        [self buttonAtIndex:selectedSegmentIndex].selected = YES;
+        UIButton *b = [self buttonAtIndex:selectedSegmentIndex];
+        b.selected = YES;
+        [UIView animateWithDuration:0.3
+                              delay:0
+                            options:UIViewAnimationOptionCurveEaseOut
+                         animations:^{
+                             self.selectedView.center = b.center;
+                         }
+                         completion:nil];
     }
 }
 
